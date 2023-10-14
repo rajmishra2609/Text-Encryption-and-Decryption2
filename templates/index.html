@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Encryption and Decryption</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 20px 20px;
+            max-width: 500px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Encryption and Decryption</h1>
+    <form method="post">
+        <textarea name="text" placeholder="Enter text..." rows="5" cols="50"></textarea>
+        <br>
+        <input type="submit" name="action" value="Encrypt">
+        <input type="submit" name="action" value="Decrypt">
+    </form>
+    {% if encrypted_text %}
+    <p><strong>Encrypted Text:</strong></p>
+    <p>{{ encrypted_text }}</p>
+    {% endif %}
+    {% if decrypted_text %}
+    <p><strong>Decrypted Text:</strong></p>
+    <p>{{ decrypted_text }}</p>
+    {% endif %}
+    {% if error_message %}
+    <p><strong>Error:</strong></p>
+    <p>{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>
